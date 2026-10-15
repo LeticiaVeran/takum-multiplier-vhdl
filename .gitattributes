@@ -1,0 +1,7 @@
+# Store text with LF line endings, whatever the editor's platform, so that
+# diffs against the upstream codec show only real changes.
+* text=auto eol=lf
+
+*.docx binary
+*.png  binary
+*.ghw  binary

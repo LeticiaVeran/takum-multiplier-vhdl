@@ -1,0 +1,29 @@
+# Python test suite: everything it generates goes to build/
+verification/build/
+
+# GHDL, if run by hand elsewhere
+*.cf
+*.o
+e~*
+
+# waveforms
+*.vcd
+*.ghw
+*.wdb
+
+# Python
+__pycache__/
+*.pyc
+
+# Vivado
+vivado/project/
+vivado/synth/reports/
+.Xil/
+*.jou
+*.log
+*.str
+*.dcp
+vivado*.backup.*
+
+# Windows mark-of-the-web leftovers
+*:Zone.Identifier

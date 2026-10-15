@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: A logarithmic takum multiplier in VHDL
+message: If you use this work, please cite it as below.
+type: software
+authors:
+  - family-names: Veran
+    given-names: Leticia
+version: 1.0.0
+date-released: 2026-10-15
+license: ISC
+repository-code: "https://github.com/LeticiaVeran/takum-multiplier-vhdl"
+abstract: >-
+  A multiplier for the logarithmic takum number format, written in VHDL-2008
+  and integrated with the official takum codec (Takum-Codec-RTL, L. Hunhold).
+  Verified exhaustively at 8 bits and by sampling up to 64 bits against an
+  independent Python reference model, and synthesised for an Artix-7 FPGA.
+keywords:
+  - takum
+  - logarithmic number system
+  - VHDL
+  - FPGA
+  - computer arithmetic
+references:
+  - type: software
+    title: Takum Codec RTL
+    authors:
+      - family-names: Hunhold
+        given-names: Laslo
+    version: v1.1.0
+    doi: 10.5281/zenodo.16923066
+    repository-code: "https://github.com/takum-arithmetic/Takum-Codec-RTL"

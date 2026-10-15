@@ -1,0 +1,16 @@
+# Runs the whole test suite on every push and pull request.
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ghdl:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GHDL
+        run: sudo apt-get update && sudo apt-get install -y ghdl
+      - name: Run the test suite
+        run: python3 verification/run_tests.py all
