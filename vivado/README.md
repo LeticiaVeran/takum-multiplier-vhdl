@@ -207,26 +207,21 @@ register a[9] → decoder (LUTs) → adder lbar_a + lbar_b (CARRY4)
    → rounding increment (CARRY4) → register y[14]
 ```
 
-**Design summary of the multiplier alone at N = 64**, the last of the eight
-runs. It meets the 10 ns constraint with 1.301 ns to spare (8.70 ns, about
+**Design summary of the multiplier alone at N = 64.** After the eight runs,
+Vivado keeps the last design it implemented open, and that is the one this
+summary shows: its numbers are exactly those of the `mul_n64` row in
+`synth/results.md`. It meets the 10 ns constraint with 1.301 ns to spare (8.70 ns, about
 115 MHz), with 118 LUTs; the 213 flip-flops are the measurement wrapper's
 registers. *No DRC violations* confirms the configuration-voltage lines added
 to the XDC.
 
 ![Vivado design summary, multiplier alone N = 64](../docs/images/vivado_summary_mul_n64.png)
 
-**Where the designs sit on the chip.** Left, the full chain at N = 16 (about
-80 slices); right, the multiplier alone at N = 64 (about 60 slices), a narrow
-column that follows the carry chain of the adder. The device has 15,850
-slices.
+**Where it sits on the chip**, same run: the multiplier alone at N = 64 takes
+about 60 of the device's 15,850 slices, in a narrow column that follows the
+carry chain of the adder.
 
-<table>
-<tr>
-<td><img src="../docs/images/vivado_device_chain_n16.png" alt="placement, chain N = 16" width="300"></td>
-<td><img src="../docs/images/vivado_device_mul_n64.png" alt="placement, multiplier alone N = 64" width="300"></td>
-</tr>
-<tr><td align="center">full chain, N = 16</td><td align="center">multiplier alone, N = 64</td></tr>
-</table>
+![placement of the multiplier alone, N = 64](../docs/images/vivado_device_mul_n64.png)
 
 The hierarchical utilisation report of a chain run lists all LUTs under `mul`.
 That does not mean the multiplier alone takes them all: synthesis flattens the
